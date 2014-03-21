@@ -1,0 +1,50 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+/* HTML element (SMACSS base) rules */
+@import "normalize.css";
+
+/* Layout rules */
+@import "layouts/responsive.css";
+
+/* Component (SMACSS module) rules */
+@import "components/misc.css";
+/* Optionally, add your own components here. */
+@import "print.css";
+
+/* SMACSS theme rules */
+/* @import "theme-A.css"; */
+/* @import "theme-B.css"; */
+
+
+/* Header Section */
+
+*:focus{
+  outline:none;
+}
+
+#header{
+  background-image: url('../images/byu-header-bg.svg'); top left no-repeat;
+  background-color:#002255;
+  background-size:100% 96px;
+}
+
+html{
+  background-color:#eeeeee;
+}
+.page-node #page,
+.page-search #page{
+  background-color:white;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+}
+.page-views #page{
+  background-color:inherit;
+}
+
