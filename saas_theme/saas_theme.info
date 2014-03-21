@@ -88,6 +88,7 @@ scripts[] = js/modernizr-2.6.2.min.js
 
 regions[hidden]         = Hidden Header
 regions[search_region]  = Search Region
+regions[secondary_menu] = Secondary Menu
 regions[header]         = Header
 regions[navigation]     = Navigation bar
 regions[slider]         = Slider

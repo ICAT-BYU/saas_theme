@@ -37,8 +37,7 @@
 html{
   background-color:#eeeeee;
 }
-.page-node #page,
-.page-search #page{
+.page-node #page{
   background-color:white;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);

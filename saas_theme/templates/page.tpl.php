@@ -44,7 +44,8 @@
       <div class="nav-mobile-header">Related Links</div>
       <ul class="links inline clearfix">
         <li><a href="https://home.byu.edu/home">BYU Home</a></li>
-        <?php print theme('links__system_secondary_menu', array(
+        <?php 
+        print theme('links__system_secondary_menu', array(
           'links' => $secondary_menu,
           'attributes' => array(
             'class' => array('links', 'inline', 'clearfix'),
@@ -65,7 +66,7 @@
   <div class="hidden-region">
     <?php $hidden = render($page['hidden']); ?>
     <?php if($hidden){ ?>
-        <div class="hidden-region-header">Brigham Young University Related Sites</div>
+        <div class="hidden-region-header"><div class="hidden-region-container">Brigham Young University Related Sites<span class="hidden-region-link-2"><a href="#" id="hidden-region-link-2"><img src="<?php print $base_url . '/' . $theme_path; ?>/images/close.svg"/></div></div></a></span>
         <div class="hidden-region-content"><?php print $hidden; ?></div>
       <?php } ?>
     
@@ -101,8 +102,11 @@
       <!--<nav class="header__secondary-menu" id="secondary-menu" role="navigation">
         <a href="https://link.byu.edu/mfc" target="_blank">My Financial Center</a>
       </nav>-->
-
-    <?php if ($secondary_menu): ?>
+  <?php $secondary_menu = render($page['secondary_menu']); ?>
+    <div class="header__secondary-menu" id="secondary-menu">
+      <?php print $secondary_menu; ?>
+    </div>
+    <?php /* if ($secondary_menu): ?>
       <nav class="header__secondary-menu" id="secondary-menu" role="navigation">
         <?php print theme('links__system_secondary_menu', array(
           'links' => $secondary_menu,
@@ -116,39 +120,20 @@
           ),
         )); ?>
       </nav>
-    <?php endif; ?>
+    <?php endif; */?>
     </div>
     <?php print render($page['header']); ?>
     
   </header>
-  <div id="navigation">
-  <div class="menu-btn"><img src="<?php print $base_url.'/'.$theme_path ?>/images/icon-menu.svg"></div>
-  <?php if($search_region){ ?><span class="search-region-mobile"><?php print $search_region; ?></span> <?php } ?>
-  <?php if ($main_menu): ?>
-    <nav id="main-menu" role="navigation" tabindex="-1">
-      <?php
-      // This code snippet is hard to modify. We recommend turning off the
-      // "Main menu" on your sub-theme's settings form, deleting this PHP
-      // code block, and, instead, using the "Menu block" module.
-      // @see https://drupal.org/project/menu_block
-      print theme('links__system_main_menu', array(
-        'links' => $main_menu,
-        'attributes' => array(
-          'class' => array('links', 'inline', 'clearfix'),
-        ),
-        'heading' => array(
-          'text' => t('Main menu'),
-          'level' => 'h2',
-          'class' => array('element-invisible'),
-        ),
-      )); ?>
-    </nav>
-  <?php endif; ?>
-
-  <?php print render($page['navigation']); ?>
-
-
+  <div id="navigation" class="navigation clearfix">
+    <div class="navigation-content"><div class="menu-btn"><img src="<?php print $base_url.'/'.$theme_path ?>/images/icon-menu.svg"></div>
+    <?php if($search_region){ ?><span class="search-region-mobile"><?php print $search_region; ?></span> <?php } ?>
+    
+    <?php print render($page['navigation']); ?>
+    </div>
   </div>
+
+
 <div id="page-slider">
   <?php print render($page['slider']); ?>
 </div>
